@@ -14,6 +14,8 @@ inputEl.addEventListener('input', debounce(onInputWrite, DEBOUNCE_DELAY));
 function onInputWrite(e) {
   let nameOfCountry = e.target.value.trim();
   if (!nameOfCountry) {
+    blockEl.innerHTML = '';
+    listEl.innerHTML = '';
     return;
   }
   fetchCountries(nameOfCountry)
